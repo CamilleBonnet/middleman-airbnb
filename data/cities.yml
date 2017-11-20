@@ -1,0 +1,32 @@
+berlin:
+  country: "Germany"
+  full: true
+  address: "Berlin Street"
+paris:
+  country: "France"
+  full: False
+  address: "Paris Street"
+shanghai:
+  country: "China"
+  full: False
+  address: "Shanghai Street"
+amsterdam:
+  country: "The Netherlands"
+  full: False
+  address: "Amsterdam treet"
+lisbon:
+  country: "Portugal"
+  full: False
+  address: "Lisboa Street"
+barcelona:
+  country: "Spain"
+  full: False
+  address: "Barcelona Street"
+rio:
+  country: "Brazil"
+  full: False
+  address: "Rio Street"
+bordeaux:
+  country: "France"
+  full: False
+  address: "Bordeaux Street"
