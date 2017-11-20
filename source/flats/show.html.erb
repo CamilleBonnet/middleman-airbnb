@@ -1,8 +1,56 @@
+---
+title: Le Wagon - Middleman - Flats
+---
+
 <!-- Access data.flats with owner's name as key -->
 <% flat = data.flats[owner] %>
 
-<!-- Inject flat data in template -->
-<%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle" %>
-<p><%= flat.name %></p>
-<h1><%= flat.description %></h1>
-<p><%= flat.city_name %></p>
+<%# image_tag "https://kitt.lewagon.com/placeholder/cities/#{flat.city_slug}", class:"banner-host" %>
+<div id="show">
+  <div class="banner banner-host" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+  </div>
+
+  <div class="header-flat">
+    <div class="container">
+      <div class="row">
+        <!-- Inject flat data in template -->
+        <div class="col-xd-12">
+          <div class="col-xd-12 col-sm-6 col-sm-offset-1">
+            <div class="header-flat-details">
+              <div class="header-flat-owner text-center">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle avatar-user" %>
+                <p><%= owner %></p>
+              </div>
+              <div class="header-flat-city">
+                <h3><%= flat.description %></h1>
+                <p><%= flat.city_name %></p>
+                <% flat.rating.to_i.times do %>
+                  <i class="fa fa-star" style="color: #ffb400"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-xd-12 col-sm-4">
+            <form action="input">
+              <h4>Book this flat</h4>
+              <div class="row form-group">
+                <div class="col-xs-6">
+                  <input type="text" placeholder="Check-in" class="form-control">
+                </div>
+                <div class="col-xs-6">
+                  <input type="text" placeholder="Check-out" class="form-control">
+                </div>
+              </div>
+              <select name="" id="" class="form-control form-group">
+                <option value="1 guest">1 guest</option>
+                <% (2..10).each do |x| %>
+                <option value="<%= x %> guests"><%= x %> guests</option>
+                <% end %>
+              </select>
+            <input type="submit" class="btn btn-danger" value="Book it" style="width: 100%">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
